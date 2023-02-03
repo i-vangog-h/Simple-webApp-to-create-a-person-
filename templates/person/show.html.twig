@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<style>
+table, th, td {
+  border:1px solid black;
+}
+a {
+    color: black;
+}
+</style>
+<h2>List of created persons</h2>
+
+<a type="button" onclick="link" href={{path("app_person_form")}}>Main</a>
+
+<table style="width:100%">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Occupation</th>
+  </tr>
+  {% for person in persons %}
+  <tr>
+    <td>{{person.getFirstName}}</td>
+    <td>{{person.getLastName}}</td>
+    <td>{{person.getEmail}}</td>
+    <td>{{person.getOccupation}}</td>
+  </tr>
+  {% endfor %}
+
+{% endblock %}

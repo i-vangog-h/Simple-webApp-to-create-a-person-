@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <h2>Enter the data to create a new person</h2>
+
+    {{ form(person_form) }}
+    
+    <a type="button" onclick="link" href={{path("persons_show")}}>Show a list of persons</a>
+
+{% endblock %}
